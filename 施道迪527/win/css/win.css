@@ -1,0 +1,57 @@
+* { margin: 00; padding: 0; }
+
+body { width: 100%; height: 100%; background: url(../img/bj.png); }
+
+ul { list-style: none; }
+
+a { text-decoration: none; color: #FFF; }
+
+.all { width: 980px; padding-bottom: 10px; margin: 10px auto; background: #121212; }
+.all header { width: 100%; height: 90px; background: black; box-sizing: border-box; }
+.all header #logo { width: 300px; height: 80px; float: left; text-align: center; font-size: 68px; color: white; padding: 0; height: 80px; }
+.all header #logo .logo_img { width: 60px; height: 60px; margin-left: 12px; }
+.all header .nav { float: right; width: 440px; height: 30px; padding-top: 44px; }
+.all header .nav li { float: left; padding: 5px; position: relative; }
+.all header .nav li a { font-size: 14px; font-weight: bold; }
+.all header .nav li:hover { background: #1496dc; }
+.all header .nav li:hover ul { display: block; }
+.all header .nav li ul { position: absolute; padding-left: 2px; top: 30px; left: 0px; background-color: blue; display: none; }
+.all header .nav li ul li { width: 120px; height: 30px; padding: 14px 0px 14px 8px; color: white; background: #414141; background: url(../img/navitem.png) no-repeat -24px -23px; transition: all 2s; }
+.all header .nav li ul li:hover { font-weight: bold; background: url(../img/navitem.png) no-repeat -2px -23px; }
+.all .none_top { width: 100%; overflow: hidden; height: 0px; transition: all 2s; }
+.all .none_top .lbt { padding: 5px; position: relative; }
+.all .none_top .lbt ul { position: relative; height: 360px; width: 968px; }
+.all .none_top .lbt ul li { width: 100%; text-align: center; position: absolute; top: 0; left: 0; }
+.all .none_top .lbt .lbt_dian { z-index: 100; width: 140px; height: 40px; position: absolute; left: 50%; margin-left: -70px; bottom: 20px; }
+.all .none_top .lbt .lbt_dian .dian { display: inline-block; width: 20px; height: 12px; border: 1px solid white; background: #1496dc; float: left; margin: 10px; }
+.all .none_top .lbt .lbt_dian .dian.ondian { background: white; }
+.all .none_top .none_top_bottom { width: 97%; height: 100px; padding: 18px; margin: 0 auto; box-sizing: border-box; background: #1496dc; }
+.all .none_top .none_top_bottom img { width: 50px; height: 50px; float: left; }
+.all .none_top .none_top_bottom p { float: left; width: 700px; height: 50px; font-family: "Adobe Devanagari Italic"; font-size: 16px; margin-left: 20px; color: white; }
+.all .jia { width: 100%; height: 20px; background: #1496dc; text-align: center; line-height: 20px; margin: 10px 0; }
+.all section { padding: 0px 0 20px; }
+.all section .top { padding-left: 8px; height: 310px; width: 100%; }
+.all section .top div { background: #7d7d7d; float: left; margin: 5px; }
+.all section .top .demo { width: 150px; height: 150px; position: relative; }
+.all section .top .demo div { width: 100%; height: 100%; margin: 0; position: absolute; transition: all 2s; backface-visibility: hidden; left: 0px; top: 0px; }
+.all section .top .demo .box1 { background: url(../img/articles/quotation_2.png) no-repeat left top; }
+.all section .top .demo .box2 { background: url(../img/articles/quotation_1.png) no-repeat right top; transform: rotateX(-180deg); }
+.all section .top .demo:hover .box1 { transform: rotateX(180deg); }
+.all section .top .demo:hover .box2 { transform: rotateX(0deg); }
+.all section .bottom { padding-left: 8px; height: 310px; width: 100%; }
+.all section .bottom .bottom_left { width: 480px; height: 310px; float: left; }
+.all section .bottom .bottom_left div { margin: 0; background: white; float: left; margin: 5px; background: #7d7d7d; }
+.all section .bottom .bottom_left .donghua1 { overflow: hidden; position: relative; top: 0; left: 0; }
+.all section .bottom .bottom_left .donghua1 .donghua1_ul { height: 300px; width: 100%; position: absolute; top: 0px; left: 0; transition: all 1s; }
+.all section .bottom .bottom_left .donghua1 .donghua1_ul li:nth-child(1) { background: #fa2800; width: 100%; height: 150px; }
+.all section .bottom .bottom_left .donghua1 .donghua1_ul li:nth-child(2) { background: blue; height: 150px; width: 100%; }
+.all section .bottom .bottom_right { width: 480px; height: 310px; float: left; }
+.all section .bottom .bottom_right div { background: white; float: left; margin: 5px; background: #7d7d7d; }
+
+.Large { width: 310px; height: 310px; }
+
+.Medium { width: 310px; height: 150px; }
+
+.Small { width: 150px; height: 150px; }
+
+/*# sourceMappingURL=win.css.map */
