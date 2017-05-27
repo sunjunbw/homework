@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table width="30%">
+		    <tr>
+		        <td>
+		        <select id="select1" size=8 multiple>
+			        <option>北京</option>
+			        <option >上海</option>
+			        <option>天津</option>
+			        <option>重庆</option>
+			        <option>广州</option>
+			        <option>深圳</option>
+		    	</select>
+		        </td>
+		        <td id="btn2">
+		            <input type="button" id="button_1" value="-->" />
+		            <input type="button" id="button_2" value="->>" /><br />
+		            <input type="button" id="button_3" value="<--" />
+		            <input type="button" id="button_4" value="<<-" />
+		        </td>
+		        <td>
+		    	<select id="select2" size=8 >
+		 
+		    	</select>
+		        </td>
+		    </tr>
+		</table>
+		<script type='text/javascript' src="js/jquery-3.1.1.min.js"></script>
+		<script>
+		/*一个在左边*/
+		$(function(){
+			var button1=document.getElementById("button_1");
+			var button2=document.getElementById("button_2");
+			var button3=document.getElementById("button_3");
+			var button4=document.getElementById("button_4");
+			var select1=document.getElementById("select1");
+			var select2=document.getElementById("select2");
+			
+            $s1Selected=$("#select1 option:selected");
+			$s1All=$("#select1 option");
+			$s2Selected=$("#select2 option:selected");
+			$s2All=$("#select2 option");
+			/*左边添加到右边*/
+			button1.onclick=function(){
+				console.log($("#select1").val())
+				$("#select2").append($("<option></option>").html($("#select1").val()));
+				
+				
+				
+			}
+				
+			$("#button_2").click(function(){
+				$("#select2").append($s1All);
+			})
+			
+			button3.onclick=function(){
+				console.log($("#select2").val())
+				$("#select1").append($("<option></option>").html($("#select2").val()));
+				
+				
+				
+			}
+			
+			$("#button_4").click(function(){
+				$("#select1").append($s2All);
+			})
+		})
+		
+		
+		</script>
+
+	</body>
+</html>
+
