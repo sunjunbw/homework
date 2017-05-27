@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>有轮播图</title>
+		<link rel="stylesheet" type="text/css" href="css/win.css" />
+		<script src="js/jquery-1.11.1.js"></script>
+	</head>
+
+	<body>
+		<div class="all" id="all">
+			<!--头部-->
+			<header>
+				<div id="logo">
+					<img src="img/logo.png" class="logo_img" /> Matrix
+				</div>
+				<ul class="nav">
+					<li>
+						<a href="#">HOME</a>
+					</li>
+					<li>
+						<a href="#">PORTFOLIO</a>
+						<ul class="nav1">
+							<li>Tile - Large</li>
+							<li>Tile - Medium</li>
+							<li>Tile - Small</li>
+							<li>Portfolio List</li>
+							<li>Single Item</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">BLOG</a>
+						<div class="nav2">
+							<ul>
+								<li>Tile - Large</li>
+								<li>Tile - Medium</li>
+								<li>Blog List</li>
+								<li>Single Post</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">FEATURES</a>
+						<div class="nav2">
+							<ul>
+								<li>Tile - Large</li>
+								<li>Tile - Medium</li>
+								<li>Blog List</li>
+								<li>Single Post</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">ABOUT</a>
+					</li>
+					<li>
+						<a href="#">CONTACT</a>
+					</li>
+				</ul>
+			</header>
+
+			<!--头部-->
+
+			<!--上部点击轮播图-->
+			<div class="jia" id="jia1">+</div>
+			<div class="none_top" id="none_top">
+
+				<div class="lbt">
+					<ul id="lbt_ul">
+						<li><img src="img/slideimg1.png" /></li>
+						<li><img src="img/slideimg2.png" /></li>
+						<li><img src="img/slideimg3.png" /></li>
+					</ul>
+					<div class="lbt_dian" id="lbt_dian">
+						<span class="dian"></span>
+						<span class="dian"></span>
+						<span class="dian"></span>
+					</div>
+					<div class="left_an"></div>
+					<div class="right_an"></div>
+				</div>
+				<div class="none_top_bottom">
+					<img src="img/articles/quotation_1.png" />
+					<p>Hello!This is a Metto UI-inspired template which brings a new web-browsing experience to the user.To funrther improve it,feedbacks are greatly welcomed!</p>
+				</div>
+			</div>
+			<!--上部点击轮播图-->
+
+			<!--<内容>-->
+			<section>
+				<div class="top">
+					<div class="Large"><img src="img/placeholder/large_blank.png" /></div>
+					<div class="Medium"><img src="img/placeholder/medium_blank.png" /></div>
+					<div class="Small"><img src="img/placeholder/small_blank.png" /></div>
+					<div class="Small"><img src="img/placeholder/small_blank.png" /></div>
+					<div class="Small"><img src="img/placeholder/small_blank.png" /></div>
+					<div class="Small" id="demo">
+						<div class="box1"></div>
+						<div class="box2"></div>
+					</div>
+					<div class="Small"><img src="img/placeholder/small_blank.png" /></div>
+					<div class="Small"><img src="img/placeholder/small_blank.png" /></div>
+				</div>
+				<div class="bottom">
+					<div class="bottom_left">
+						<div class="Small donghua1">
+							<ul class="donghua1_ul">
+								<li>SOMGSD</li>
+								<li>GDERTWE</li>
+							</ul>
+						</div>
+						<div class="Small" id="demo">
+							<div class="box3"><img src="img/video.png" /></div>
+							<div class="box4"><img src="img/video.png" /></div>
+						</div>
+						<div class="Small">
+							<img src="img/placeholder/small_blank.png" />
+						</div>
+						<div class="Medium"><img src="img/placeholder/medium_blank.png" /></div>
+						<div class="Small donghua1">
+							<ul class="donghua2_ul">
+								<li><img src="img/articles/html5.png" /></li>
+								<li><img src="img/hyperlink.png" /></li>
+							</ul>
+						</div>
+					</div>
+					<div class="bottom_right">
+						<div class="Large"><img src="img/placeholder/large_blank.png" /></div>
+						<div class="Small"><img src="img/placeholder/small_blank.png" /></div>
+						<div class="Small"><img src="img/placeholder/small_blank.png" /></div>
+					</div>
+				</div>
+			</section>
+			<!--内容-->
+			<!--下部点击出现-->
+			<div class="jia2 jia">+</div>
+			<!--下部点击出现-->
+			<!--<底部>-->
+			<footer>
+				<ul class="foot_tb" id="foot_ul">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</footer>
+			<!--<底部>-->
+		</div>
+	</body>
+
+	<script>
+		$(function() {
+		//	<上部点击轮播图>
+		var jia1 = document.getElementById("jia1");
+		var none_top = document.getElementById("none_top");
+		var ch = true;
+		jia1.onclick = function() {
+			if(ch) {
+				none_top.style.height = "500px";
+				jia1.innerHTML = "-";
+				ch = false;
+			} else {
+				none_top.style.height = "0px";
+				jia1.innerHTML = "+";
+				ch = true;
+			}
+			$(this).checked
+		}
+
+		var foot_ul = document.getElementById("foot_ul");
+		var foot_ul_lis = foot_ul.getElementsByTagName("li");
+		//	console.log(foot_ul_lis.length);
+		for(var i = 0; i < foot_ul_lis.length; i++) {
+			var b = -i * 30;
+			foot_ul_lis[i].style.backgroundPositionY = b + "px";
+		}
+    
+//    jQuery
+		
+			//  	 大轮播图
+			var timer = null;
+			var index = 0;
+			$(".lbt_dian span").click(function() {
+				index = $(this).index();
+				showImage(index);
+			}).eq(0).trigger("click");
+
+			var i = 0;
+			$(".left_an").click(function() {
+				i--;
+				if(i == -2) {
+					i = 1;
+				}
+				showImage(i);
+			});
+
+			$(".right_an").click(function() {
+				i++;
+				if(i == 3) {
+					i = 0;
+				}
+				showImage(i);
+			});
+
+			$(".lbt").hover(function() {
+				clearInterval(timer);
+			}, function() {
+				timer = setInterval(function() {
+					index++;
+					if(index == 3) {
+						index = 0;
+					}
+					showImage(index);
+				}, 4000);
+			}).trigger("mouseleave");
+
+			function showImage(idx) {
+				$(".lbt_dian span").eq(idx).addClass("ondian").siblings().removeClass("ondian");
+				$("#lbt_ul li").eq(idx).find("img").fadeIn().parent().siblings().find("img").fadeOut();
+            }
+	
+		});
+	</script>
+
+</html>
