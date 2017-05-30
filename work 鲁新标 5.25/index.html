@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+		<script src="js/jquery-3.2.1.js"></script>
+		<script>
+			$(function(){
+				var s=0;
+				var i=0;
+				var timer=null;
+				var time=null;
+				var j=1;
+				var len=$(".fig figure").length;
+				//第一个加号显示的盒子加轮播
+				$("#show").click(function(){
+					s++;
+					if(s==1){
+						$(this).html("－");
+						$(".show1").stop().animate({"height":"360px","opacity":"1","margin-bottom":"10px"},500);
+						$(".show1 ul").show(500);
+					}
+					else{
+						$(this).html("＋");
+						$(".show1").stop().animate({"height":"0px","opacity":"0","margin-bottom":"0px"},500);
+						$(".show1 ul").hide(500);
+						s=0;
+					}
+				})
+				$(".fig figure").eq(0).find("img").show();
+				$(".show1").hover(function(){
+					clearInterval(time);
+				},function(){
+					time=setInterval(function(){
+						i++;
+						if(i>len-1){
+							i=0;
+						}
+						$(".fig figure").eq(i).fadeIn(500);
+						$(".fig figure").eq(i).siblings().fadeOut();
+						$(".fig figure").eq(i).find("img").fadeIn(500);
+						$(".fig figure").eq(i).siblings().find("img").fadeOut();
+						$(".lis li").eq(i).addClass("bac").siblings().removeClass("bac");
+					},2000)
+				}).trigger("mouseleave");
+				$(".next").click(function(){
+					i++;
+					if(i>len-1){
+						i=0;
+					}
+					$(".fig figure").eq(i).fadeIn(500);
+					$(".fig figure").eq(i).siblings().fadeOut();
+					$(".fig figure").eq(i).find("img").fadeIn(500);
+					$(".fig figure").eq(i).siblings().find("img").fadeOut();
+					$(".lis li").eq(i).addClass("bac").siblings().removeClass("bac");
+				})
+				$(".prev").click(function(){
+					i--;
+					if(i<0){
+						i=len-1;
+					}
+					$(".fig figure").eq(i).fadeIn(500);
+					$(".fig figure").eq(i).siblings().fadeOut();
+					$(".fig figure").eq(i).find("img").fadeIn(500);
+					$(".fig figure").eq(i).siblings().find("img").fadeOut();
+					$(".lis li").eq(i).addClass("bac").siblings().removeClass("bac");
+				})
+				$(".lis li").click(function(){
+					i=$(this).index();
+					$(".fig figure").eq(i).fadeIn(500);
+					$(".fig figure").eq(i).siblings().fadeOut();
+					$(".fig figure").eq(i).find("img").fadeIn(500);
+					$(".fig figure").eq(i).siblings().find("img").fadeOut();
+					$(".lis li").eq(i).addClass("bac").siblings().removeClass("bac");
+				})
+				//中间主题内容
+				//第一个来回显示
+				$("#one").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+					j++;
+					if(j%2!=1){
+						$(".dong").stop().animate({"left":-310+"px"},1000);
+					}
+					else{
+						$(".dong").stop().animate({"left":"0px"},1000,function(){
+							j=1;
+						});
+					}
+				},3000)
+				}).trigger("mouseleave");				
+				
+				//朦盒子
+				$(".nav ul").mousemove(function(){
+					$(this).siblings().css({"opacity":"0.5"});
+					$(this).find("li").mousemove(function(){
+						$(this).siblings().css({"opacity":"0.5"});
+					}).mouseout(function(){
+						$(this).siblings().css({"opacity":"1"});
+					})
+				}).mouseout(function(){
+					$(this).siblings().css({"opacity":"1"});
+				})
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<header class="header">
+				<img src="img/logo.png"/>
+				<h1>Matrix</h1>
+				<div class="subnav">
+					<ul>
+						<li>
+							<h4>HOME</h4>
+							<ul class="uls">
+								<li>home</li>
+								<li>work</li>
+								<li>hello</li>
+							</ul>
+						</li>
+						<li><h4>PORTFOLIO</h4>
+							<ul class="uls">
+								<li>home</li>
+								<li>work</li>
+								<li>hello</li>
+							</ul>
+						</li>
+						<li><h4>BLOG</h4>
+							<ul class="uls">
+								<li>home</li>
+								<li>work</li>
+								<li>hello</li>
+							</ul>
+						</li>
+						<li><h4>FEATURES</h4>
+							<ul class="uls">
+								<li>home</li>
+								<li>work</li>
+								<li>hello</li>
+							</ul>
+						</li>
+						<li><h4>ABOUT</h4></li>
+						<li><h4>CONTACT</h4></li>
+					</ul>
+				</div>
+				
+			</header>
+			<div class="show" id="show">＋</div>
+			<div class="show1">
+				<div class="fig">
+					<figure>
+						<img src="img/slideimg1.png" alt="" class="imgshow"/>
+						<figcaption>Responsive</figcaption>
+					</figure>
+					<figure>
+						<img src="img/slideimg2.png" alt="" class="imgshow"/>
+						<figcaption>Tile Design</figcaption>
+					</figure>
+					<figure>
+						<img src="img/slideimg3.png" alt="" class="imgshow"/>
+						<figcaption>Customizability</figcaption>
+					</figure>
+				</div>
+				<ul class="lis">
+					<li class="bac"></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<span class="prev"></span>
+				<span class="next"></span>
+			</div>
+			<div class="nav">
+				<ul class="ultop">
+					<li id="one">
+						<p>09</p>
+						<span>July</span>
+						<div class="dong">
+							<img src="img/placeholder/large_blank.png"/>
+							<img src="img/placeholder/large_blank.png"/>
+						</div>
+						<i class="everbody"></i>
+					</li>
+					<li>
+						<p>06</p>
+						<span>July</span>
+						<i class="everbody"></i>
+					</li>
+					<li>
+						<i class="everbody"></i>
+					</li>
+					<li>
+						<i class="everbody"></i>
+					</li>
+					<li>
+						<i class="everbody"></i>
+					</li>
+					<li class="boxhover">
+						<div class="boxa"></div>
+						<div class="boxb"></div>
+						<i class="everbody"></i>
+					</li>
+					<li>
+						<i class="everbody"></i>
+					</li>
+					<li>
+						<i class="everbody"></i>
+					</li>
+				</ul>
+				<ul class="ulbom">
+					<li>
+						<p>NO Hover <br />Effect</p>
+						<div class="topbox">
+							<span>Solid Color</span>
+						</div>
+						<i class="everbody"></i>
+					</li>
+					<li><i class="everbody"></i></li>
+					<li><i class="everbody"></i></li>
+					<li>
+						<p>01</p>
+						<span>July</span>
+						<i class="everbody"></i>
+					</li>
+					<li>
+						<div class="bombox"></div>
+						<i class="everbody"></i>
+					</li>
+				</ul>
+				<ul class="ulright">
+					<li>
+						<div class="lastbox">
+							<span>
+								Twitter	
+							</span>
+						</div>
+						<i class="everbody"></i>
+					</li>
+					<li><i class="everbody"></i></li>
+					<li><i class="everbody"></i></li>
+				</ul>
+			</div>
+			<div class="show showabc">＋</div>
+			<div class="footer">
+				<ul class="foot">
+					<li>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
